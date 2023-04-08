@@ -1,0 +1,1639 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище configuratorPCModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="add_ssd">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="volume" Type="int" Nullable="false" />
+          <Property Name="write_speed" Type="int" Nullable="false" />
+          <Property Name="read_speed" Type="int" Nullable="false" />
+          <Property Name="type_chip" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="rating" Type="float" />
+          <Property Name="type_memory_id" Type="int" />
+        </EntityType>
+        <EntityType Name="body">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ffactor" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="type_body_id" Type="int" Nullable="false" />
+          <Property Name="colors_id" Type="int" Nullable="false" />
+          <Property Name="max_videocard" Type="int" Nullable="false" />
+          <Property Name="dimensions" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="max_cool" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+        </EntityType>
+        <EntityType Name="certification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="colors">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="computer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="processor_id" Type="int" Nullable="false" />
+          <Property Name="motherboard_id" Type="int" Nullable="false" />
+          <Property Name="body_id" Type="int" Nullable="false" />
+          <Property Name="ram_id" Type="int" Nullable="false" />
+          <Property Name="videocard_id" Type="int" Nullable="false" />
+          <Property Name="ssd_id" Type="int" Nullable="false" />
+          <Property Name="cooling_id" Type="int" Nullable="false" />
+          <Property Name="power_unit_id" Type="int" Nullable="false" />
+          <Property Name="hard_drive_id" Type="int" Nullable="false" />
+          <Property Name="add_ssd_id" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" />
+          <Property Name="description" Type="text" />
+        </EntityType>
+        <EntityType Name="cool_system">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cooling">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="max_speed" Type="int" Nullable="false" />
+          <Property Name="height_cool" Type="int" Nullable="false" />
+          <Property Name="material_id" Type="int" Nullable="false" />
+          <Property Name="power" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="rating" Type="float" />
+        </EntityType>
+        <EntityType Name="hard_drive">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="volume" Type="int" Nullable="false" />
+          <Property Name="read_speed" Type="int" Nullable="false" />
+          <Property Name="cache" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="rating" Type="float" />
+          <Property Name="type_memory_id" Type="int" />
+        </EntityType>
+        <EntityType Name="material">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="motherboard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="socket" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="chipset" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="max_freq" Type="int" Nullable="false" />
+          <Property Name="channels" Type="int" Nullable="false" />
+          <Property Name="network" Type="text" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+        </EntityType>
+        <EntityType Name="power_unit">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="power" Type="int" Nullable="false" />
+          <Property Name="certification_id" Type="int" Nullable="false" />
+          <Property Name="cool_system_id" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="rating" Type="float" />
+        </EntityType>
+        <EntityType Name="processor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="socket" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="core" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="streams" Type="text" Nullable="false" />
+          <Property Name="cache" Type="int" Nullable="false" />
+          <Property Name="freq" Type="int" Nullable="false" />
+          <Property Name="heat" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="rating" Type="float" />
+        </EntityType>
+        <EntityType Name="ram">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="socket" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="type_id" Type="int" Nullable="false" />
+          <Property Name="volume" Type="int" Nullable="false" />
+          <Property Name="freq" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="rating" Type="float" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ssd">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="volume" Type="int" Nullable="false" />
+          <Property Name="write_speed" Type="int" Nullable="false" />
+          <Property Name="read_speed" Type="int" Nullable="false" />
+          <Property Name="type_chip" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="rating" Type="float" />
+          <Property Name="type_memory_id" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="type_body">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="type_memory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="type_ram">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="photo" Type="text" />
+          <Property Name="role_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="videocard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="graph_proc" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="memory" Type="int" Nullable="false" />
+          <Property Name="permisson" Type="text" Nullable="false" />
+          <Property Name="freq" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="rating" Type="float" />
+        </EntityType>
+        <Association Name="FK_add_ssd_type_memory">
+          <End Role="type_memory" Type="Self.type_memory" Multiplicity="0..1" />
+          <End Role="add_ssd" Type="Self.add_ssd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_memory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="add_ssd">
+              <PropertyRef Name="type_memory_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_body_colors">
+          <End Role="colors" Type="Self.colors" Multiplicity="1" />
+          <End Role="body" Type="Self.body" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colors">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="body">
+              <PropertyRef Name="colors_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_body_type_body">
+          <End Role="type_body" Type="Self.type_body" Multiplicity="1" />
+          <End Role="body" Type="Self.body" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_body">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="body">
+              <PropertyRef Name="type_body_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_add_ssd">
+          <End Role="add_ssd" Type="Self.add_ssd" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="add_ssd">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="add_ssd_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_body">
+          <End Role="body" Type="Self.body" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="body">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="body_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_cooling">
+          <End Role="cooling" Type="Self.cooling" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cooling">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="cooling_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_hard_drive">
+          <End Role="hard_drive" Type="Self.hard_drive" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hard_drive">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="hard_drive_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_motherboard">
+          <End Role="motherboard" Type="Self.motherboard" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="motherboard">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="motherboard_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_power_unit">
+          <End Role="power_unit" Type="Self.power_unit" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="power_unit">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="power_unit_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_processor">
+          <End Role="processor" Type="Self.processor" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="processor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="processor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_ram">
+          <End Role="ram" Type="Self.ram" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ram">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="ram_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_ssd">
+          <End Role="ssd" Type="Self.ssd" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ssd">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="ssd_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_videocard">
+          <End Role="videocard" Type="Self.videocard" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="videocard">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="videocard_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cooling_material">
+          <End Role="material" Type="Self.material" Multiplicity="1" />
+          <End Role="cooling" Type="Self.cooling" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="material">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cooling">
+              <PropertyRef Name="material_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_hard_drive_type_memory">
+          <End Role="type_memory" Type="Self.type_memory" Multiplicity="0..1" />
+          <End Role="hard_drive" Type="Self.hard_drive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_memory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="hard_drive">
+              <PropertyRef Name="type_memory_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_power_unit_certification">
+          <End Role="certification" Type="Self.certification" Multiplicity="1" />
+          <End Role="power_unit" Type="Self.power_unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="certification">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="power_unit">
+              <PropertyRef Name="certification_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_power_unit_cool_system">
+          <End Role="cool_system" Type="Self.cool_system" Multiplicity="1" />
+          <End Role="power_unit" Type="Self.power_unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cool_system">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="power_unit">
+              <PropertyRef Name="cool_system_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ram_type_ram">
+          <End Role="type_ram" Type="Self.type_ram" Multiplicity="1" />
+          <End Role="ram" Type="Self.ram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_ram">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ram">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ssd_type_memory">
+          <End Role="type_memory" Type="Self.type_memory" Multiplicity="0..1" />
+          <End Role="ssd" Type="Self.ssd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_memory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ssd">
+              <PropertyRef Name="type_memory_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_role">
+          <End Role="role" Type="Self.role" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="role">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="Хранилище configuratorPCModelContainer">
+          <EntitySet Name="add_ssd" EntityType="Self.add_ssd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="body" EntityType="Self.body" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="certification" EntityType="Self.certification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="colors" EntityType="Self.colors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="computer" EntityType="Self.computer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cool_system" EntityType="Self.cool_system" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cooling" EntityType="Self.cooling" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hard_drive" EntityType="Self.hard_drive" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="material" EntityType="Self.material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="motherboard" EntityType="Self.motherboard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="power_unit" EntityType="Self.power_unit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="processor" EntityType="Self.processor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ram" EntityType="Self.ram" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ssd" EntityType="Self.ssd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="type_body" EntityType="Self.type_body" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="type_memory" EntityType="Self.type_memory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="type_ram" EntityType="Self.type_ram" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="videocard" EntityType="Self.videocard" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_add_ssd_type_memory" Association="Self.FK_add_ssd_type_memory">
+            <End Role="type_memory" EntitySet="type_memory" />
+            <End Role="add_ssd" EntitySet="add_ssd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_body_colors" Association="Self.FK_body_colors">
+            <End Role="colors" EntitySet="colors" />
+            <End Role="body" EntitySet="body" />
+          </AssociationSet>
+          <AssociationSet Name="FK_body_type_body" Association="Self.FK_body_type_body">
+            <End Role="type_body" EntitySet="type_body" />
+            <End Role="body" EntitySet="body" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_add_ssd" Association="Self.FK_computer_add_ssd">
+            <End Role="add_ssd" EntitySet="add_ssd" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_body" Association="Self.FK_computer_body">
+            <End Role="body" EntitySet="body" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_cooling" Association="Self.FK_computer_cooling">
+            <End Role="cooling" EntitySet="cooling" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_hard_drive" Association="Self.FK_computer_hard_drive">
+            <End Role="hard_drive" EntitySet="hard_drive" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_motherboard" Association="Self.FK_computer_motherboard">
+            <End Role="motherboard" EntitySet="motherboard" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_power_unit" Association="Self.FK_computer_power_unit">
+            <End Role="power_unit" EntitySet="power_unit" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_processor" Association="Self.FK_computer_processor">
+            <End Role="processor" EntitySet="processor" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_ram" Association="Self.FK_computer_ram">
+            <End Role="ram" EntitySet="ram" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_ssd" Association="Self.FK_computer_ssd">
+            <End Role="ssd" EntitySet="ssd" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_user" Association="Self.FK_computer_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_videocard" Association="Self.FK_computer_videocard">
+            <End Role="videocard" EntitySet="videocard" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cooling_material" Association="Self.FK_cooling_material">
+            <End Role="material" EntitySet="material" />
+            <End Role="cooling" EntitySet="cooling" />
+          </AssociationSet>
+          <AssociationSet Name="FK_hard_drive_type_memory" Association="Self.FK_hard_drive_type_memory">
+            <End Role="type_memory" EntitySet="type_memory" />
+            <End Role="hard_drive" EntitySet="hard_drive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_power_unit_certification" Association="Self.FK_power_unit_certification">
+            <End Role="certification" EntitySet="certification" />
+            <End Role="power_unit" EntitySet="power_unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_power_unit_cool_system" Association="Self.FK_power_unit_cool_system">
+            <End Role="cool_system" EntitySet="cool_system" />
+            <End Role="power_unit" EntitySet="power_unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ram_type_ram" Association="Self.FK_ram_type_ram">
+            <End Role="type_ram" EntitySet="type_ram" />
+            <End Role="ram" EntitySet="ram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ssd_type_memory" Association="Self.FK_ssd_type_memory">
+            <End Role="type_memory" EntitySet="type_memory" />
+            <End Role="ssd" EntitySet="ssd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_role" Association="Self.FK_user_role">
+            <End Role="role" EntitySet="role" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="configuratorPCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="add_ssd">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="volume" Type="Int32" Nullable="false" />
+          <Property Name="write_speed" Type="Int32" Nullable="false" />
+          <Property Name="read_speed" Type="Int32" Nullable="false" />
+          <Property Name="type_chip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rating" Type="Double" />
+          <Property Name="type_memory_id" Type="Int32" />
+          <NavigationProperty Name="type_memory" Relationship="Self.FK_add_ssd_type_memory" FromRole="add_ssd" ToRole="type_memory" />
+          <NavigationProperty Name="computer" Relationship="Self.FK_computer_add_ssd" FromRole="add_ssd" ToRole="computer" />
+        </EntityType>
+        <EntityType Name="body">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ffactor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type_body_id" Type="Int32" Nullable="false" />
+          <Property Name="colors_id" Type="Int32" Nullable="false" />
+          <Property Name="max_videocard" Type="Int32" Nullable="false" />
+          <Property Name="dimensions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="max_cool" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="colors" Relationship="Self.FK_body_colors" FromRole="body" ToRole="colors" />
+          <NavigationProperty Name="type_body" Relationship="Self.FK_body_type_body" FromRole="body" ToRole="type_body" />
+          <NavigationProperty Name="computer" Relationship="Self.FK_computer_body" FromRole="body" ToRole="computer" />
+        </EntityType>
+        <EntityType Name="certification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="power_unit" Relationship="Self.FK_power_unit_certification" FromRole="certification" ToRole="power_unit" />
+        </EntityType>
+        <EntityType Name="colors">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="body" Relationship="Self.FK_body_colors" FromRole="colors" ToRole="body" />
+        </EntityType>
+        <EntityType Name="computer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="processor_id" Type="Int32" Nullable="false" />
+          <Property Name="motherboard_id" Type="Int32" Nullable="false" />
+          <Property Name="body_id" Type="Int32" Nullable="false" />
+          <Property Name="ram_id" Type="Int32" Nullable="false" />
+          <Property Name="videocard_id" Type="Int32" Nullable="false" />
+          <Property Name="ssd_id" Type="Int32" Nullable="false" />
+          <Property Name="cooling_id" Type="Int32" Nullable="false" />
+          <Property Name="power_unit_id" Type="Int32" Nullable="false" />
+          <Property Name="hard_drive_id" Type="Int32" Nullable="false" />
+          <Property Name="add_ssd_id" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="add_ssd" Relationship="Self.FK_computer_add_ssd" FromRole="computer" ToRole="add_ssd" />
+          <NavigationProperty Name="body" Relationship="Self.FK_computer_body" FromRole="computer" ToRole="body" />
+          <NavigationProperty Name="cooling" Relationship="Self.FK_computer_cooling" FromRole="computer" ToRole="cooling" />
+          <NavigationProperty Name="hard_drive" Relationship="Self.FK_computer_hard_drive" FromRole="computer" ToRole="hard_drive" />
+          <NavigationProperty Name="motherboard" Relationship="Self.FK_computer_motherboard" FromRole="computer" ToRole="motherboard" />
+          <NavigationProperty Name="power_unit" Relationship="Self.FK_computer_power_unit" FromRole="computer" ToRole="power_unit" />
+          <NavigationProperty Name="processor" Relationship="Self.FK_computer_processor" FromRole="computer" ToRole="processor" />
+          <NavigationProperty Name="ram" Relationship="Self.FK_computer_ram" FromRole="computer" ToRole="ram" />
+          <NavigationProperty Name="ssd" Relationship="Self.FK_computer_ssd" FromRole="computer" ToRole="ssd" />
+          <NavigationProperty Name="user" Relationship="Self.FK_computer_user" FromRole="computer" ToRole="user" />
+          <NavigationProperty Name="videocard" Relationship="Self.FK_computer_videocard" FromRole="computer" ToRole="videocard" />
+        </EntityType>
+        <EntityType Name="cool_system">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="power_unit" Relationship="Self.FK_power_unit_cool_system" FromRole="cool_system" ToRole="power_unit" />
+        </EntityType>
+        <EntityType Name="cooling">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="max_speed" Type="Int32" Nullable="false" />
+          <Property Name="height_cool" Type="Int32" Nullable="false" />
+          <Property Name="material_id" Type="Int32" Nullable="false" />
+          <Property Name="power" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rating" Type="Double" />
+          <NavigationProperty Name="computer" Relationship="Self.FK_computer_cooling" FromRole="cooling" ToRole="computer" />
+          <NavigationProperty Name="material" Relationship="Self.FK_cooling_material" FromRole="cooling" ToRole="material" />
+        </EntityType>
+        <EntityType Name="hard_drive">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="volume" Type="Int32" Nullable="false" />
+          <Property Name="read_speed" Type="Int32" Nullable="false" />
+          <Property Name="cache" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rating" Type="Double" />
+          <Property Name="type_memory_id" Type="Int32" />
+          <NavigationProperty Name="computer" Relationship="Self.FK_computer_hard_drive" FromRole="hard_drive" ToRole="computer" />
+          <NavigationProperty Name="type_memory" Relationship="Self.FK_hard_drive_type_memory" FromRole="hard_drive" ToRole="type_memory" />
+        </EntityType>
+        <EntityType Name="material">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="cooling" Relationship="Self.FK_cooling_material" FromRole="material" ToRole="cooling" />
+        </EntityType>
+        <EntityType Name="motherboard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="socket" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="chipset" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="max_freq" Type="Int32" Nullable="false" />
+          <Property Name="channels" Type="Int32" Nullable="false" />
+          <Property Name="network" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="computer" Relationship="Self.FK_computer_motherboard" FromRole="motherboard" ToRole="computer" />
+        </EntityType>
+        <EntityType Name="power_unit">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="power" Type="Int32" Nullable="false" />
+          <Property Name="certification_id" Type="Int32" Nullable="false" />
+          <Property Name="cool_system_id" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rating" Type="Double" />
+          <NavigationProperty Name="certification" Relationship="Self.FK_power_unit_certification" FromRole="power_unit" ToRole="certification" />
+          <NavigationProperty Name="computer" Relationship="Self.FK_computer_power_unit" FromRole="power_unit" ToRole="computer" />
+          <NavigationProperty Name="cool_system" Relationship="Self.FK_power_unit_cool_system" FromRole="power_unit" ToRole="cool_system" />
+        </EntityType>
+        <EntityType Name="processor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="socket" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="core" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="streams" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cache" Type="Int32" Nullable="false" />
+          <Property Name="freq" Type="Int32" Nullable="false" />
+          <Property Name="heat" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rating" Type="Double" />
+          <NavigationProperty Name="computer" Relationship="Self.FK_computer_processor" FromRole="processor" ToRole="computer" />
+        </EntityType>
+        <EntityType Name="ram">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="socket" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type_id" Type="Int32" Nullable="false" />
+          <Property Name="volume" Type="Int32" Nullable="false" />
+          <Property Name="freq" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rating" Type="Double" />
+          <NavigationProperty Name="computer" Relationship="Self.FK_computer_ram" FromRole="ram" ToRole="computer" />
+          <NavigationProperty Name="type_ram" Relationship="Self.FK_ram_type_ram" FromRole="ram" ToRole="type_ram" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="user" Relationship="Self.FK_user_role" FromRole="role" ToRole="user" />
+        </EntityType>
+        <EntityType Name="ssd">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="volume" Type="Int32" Nullable="false" />
+          <Property Name="write_speed" Type="Int32" Nullable="false" />
+          <Property Name="read_speed" Type="Int32" Nullable="false" />
+          <Property Name="type_chip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rating" Type="Double" />
+          <Property Name="type_memory_id" Type="Int32" />
+          <NavigationProperty Name="computer" Relationship="Self.FK_computer_ssd" FromRole="ssd" ToRole="computer" />
+          <NavigationProperty Name="type_memory" Relationship="Self.FK_ssd_type_memory" FromRole="ssd" ToRole="type_memory" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="type_body">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="body" Relationship="Self.FK_body_type_body" FromRole="type_body" ToRole="body" />
+        </EntityType>
+        <EntityType Name="type_memory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="add_ssd" Relationship="Self.FK_add_ssd_type_memory" FromRole="type_memory" ToRole="add_ssd" />
+          <NavigationProperty Name="hard_drive" Relationship="Self.FK_hard_drive_type_memory" FromRole="type_memory" ToRole="hard_drive" />
+          <NavigationProperty Name="ssd" Relationship="Self.FK_ssd_type_memory" FromRole="type_memory" ToRole="ssd" />
+        </EntityType>
+        <EntityType Name="type_ram">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ram" Relationship="Self.FK_ram_type_ram" FromRole="type_ram" ToRole="ram" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="role_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="computer" Relationship="Self.FK_computer_user" FromRole="user" ToRole="computer" />
+          <NavigationProperty Name="role" Relationship="Self.FK_user_role" FromRole="user" ToRole="role" />
+        </EntityType>
+        <EntityType Name="videocard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="graph_proc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="memory" Type="Int32" Nullable="false" />
+          <Property Name="permisson" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="freq" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rating" Type="Double" />
+          <NavigationProperty Name="computer" Relationship="Self.FK_computer_videocard" FromRole="videocard" ToRole="computer" />
+        </EntityType>
+        <Association Name="FK_add_ssd_type_memory">
+          <End Role="type_memory" Type="Self.type_memory" Multiplicity="0..1" />
+          <End Role="add_ssd" Type="Self.add_ssd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_memory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="add_ssd">
+              <PropertyRef Name="type_memory_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_add_ssd">
+          <End Role="add_ssd" Type="Self.add_ssd" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="add_ssd">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="add_ssd_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_body_colors">
+          <End Role="colors" Type="Self.colors" Multiplicity="1" />
+          <End Role="body" Type="Self.body" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="colors">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="body">
+              <PropertyRef Name="colors_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_body_type_body">
+          <End Role="type_body" Type="Self.type_body" Multiplicity="1" />
+          <End Role="body" Type="Self.body" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_body">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="body">
+              <PropertyRef Name="type_body_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_body">
+          <End Role="body" Type="Self.body" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="body">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="body_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_power_unit_certification">
+          <End Role="certification" Type="Self.certification" Multiplicity="1" />
+          <End Role="power_unit" Type="Self.power_unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="certification">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="power_unit">
+              <PropertyRef Name="certification_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_cooling">
+          <End Role="cooling" Type="Self.cooling" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cooling">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="cooling_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_hard_drive">
+          <End Role="hard_drive" Type="Self.hard_drive" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hard_drive">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="hard_drive_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_motherboard">
+          <End Role="motherboard" Type="Self.motherboard" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="motherboard">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="motherboard_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_power_unit">
+          <End Role="power_unit" Type="Self.power_unit" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="power_unit">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="power_unit_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_processor">
+          <End Role="processor" Type="Self.processor" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="processor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="processor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_ram">
+          <End Role="ram" Type="Self.ram" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ram">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="ram_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_ssd">
+          <End Role="ssd" Type="Self.ssd" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ssd">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="ssd_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_computer_videocard">
+          <End Role="videocard" Type="Self.videocard" Multiplicity="1" />
+          <End Role="computer" Type="Self.computer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="videocard">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="computer">
+              <PropertyRef Name="videocard_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_power_unit_cool_system">
+          <End Role="cool_system" Type="Self.cool_system" Multiplicity="1" />
+          <End Role="power_unit" Type="Self.power_unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cool_system">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="power_unit">
+              <PropertyRef Name="cool_system_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cooling_material">
+          <End Role="material" Type="Self.material" Multiplicity="1" />
+          <End Role="cooling" Type="Self.cooling" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="material">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cooling">
+              <PropertyRef Name="material_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_hard_drive_type_memory">
+          <End Role="type_memory" Type="Self.type_memory" Multiplicity="0..1" />
+          <End Role="hard_drive" Type="Self.hard_drive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_memory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="hard_drive">
+              <PropertyRef Name="type_memory_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ram_type_ram">
+          <End Role="type_ram" Type="Self.type_ram" Multiplicity="1" />
+          <End Role="ram" Type="Self.ram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_ram">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ram">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_role">
+          <End Role="role" Type="Self.role" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="role">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ssd_type_memory">
+          <End Role="type_memory" Type="Self.type_memory" Multiplicity="0..1" />
+          <End Role="ssd" Type="Self.ssd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_memory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ssd">
+              <PropertyRef Name="type_memory_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="configuratorPCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="add_ssd" EntityType="Self.add_ssd" />
+          <EntitySet Name="body" EntityType="Self.body" />
+          <EntitySet Name="certification" EntityType="Self.certification" />
+          <EntitySet Name="colors" EntityType="Self.colors" />
+          <EntitySet Name="computer" EntityType="Self.computer" />
+          <EntitySet Name="cool_system" EntityType="Self.cool_system" />
+          <EntitySet Name="cooling" EntityType="Self.cooling" />
+          <EntitySet Name="hard_drive" EntityType="Self.hard_drive" />
+          <EntitySet Name="material" EntityType="Self.material" />
+          <EntitySet Name="motherboard" EntityType="Self.motherboard" />
+          <EntitySet Name="power_unit" EntityType="Self.power_unit" />
+          <EntitySet Name="processor" EntityType="Self.processor" />
+          <EntitySet Name="ram" EntityType="Self.ram" />
+          <EntitySet Name="role" EntityType="Self.role" />
+          <EntitySet Name="ssd" EntityType="Self.ssd" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="type_body" EntityType="Self.type_body" />
+          <EntitySet Name="type_memory" EntityType="Self.type_memory" />
+          <EntitySet Name="type_ram" EntityType="Self.type_ram" />
+          <EntitySet Name="user" EntityType="Self.user" />
+          <EntitySet Name="videocard" EntityType="Self.videocard" />
+          <AssociationSet Name="FK_add_ssd_type_memory" Association="Self.FK_add_ssd_type_memory">
+            <End Role="type_memory" EntitySet="type_memory" />
+            <End Role="add_ssd" EntitySet="add_ssd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_add_ssd" Association="Self.FK_computer_add_ssd">
+            <End Role="add_ssd" EntitySet="add_ssd" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_body_colors" Association="Self.FK_body_colors">
+            <End Role="colors" EntitySet="colors" />
+            <End Role="body" EntitySet="body" />
+          </AssociationSet>
+          <AssociationSet Name="FK_body_type_body" Association="Self.FK_body_type_body">
+            <End Role="type_body" EntitySet="type_body" />
+            <End Role="body" EntitySet="body" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_body" Association="Self.FK_computer_body">
+            <End Role="body" EntitySet="body" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_power_unit_certification" Association="Self.FK_power_unit_certification">
+            <End Role="certification" EntitySet="certification" />
+            <End Role="power_unit" EntitySet="power_unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_cooling" Association="Self.FK_computer_cooling">
+            <End Role="cooling" EntitySet="cooling" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_hard_drive" Association="Self.FK_computer_hard_drive">
+            <End Role="hard_drive" EntitySet="hard_drive" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_motherboard" Association="Self.FK_computer_motherboard">
+            <End Role="motherboard" EntitySet="motherboard" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_power_unit" Association="Self.FK_computer_power_unit">
+            <End Role="power_unit" EntitySet="power_unit" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_processor" Association="Self.FK_computer_processor">
+            <End Role="processor" EntitySet="processor" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_ram" Association="Self.FK_computer_ram">
+            <End Role="ram" EntitySet="ram" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_ssd" Association="Self.FK_computer_ssd">
+            <End Role="ssd" EntitySet="ssd" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_user" Association="Self.FK_computer_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_computer_videocard" Association="Self.FK_computer_videocard">
+            <End Role="videocard" EntitySet="videocard" />
+            <End Role="computer" EntitySet="computer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_power_unit_cool_system" Association="Self.FK_power_unit_cool_system">
+            <End Role="cool_system" EntitySet="cool_system" />
+            <End Role="power_unit" EntitySet="power_unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cooling_material" Association="Self.FK_cooling_material">
+            <End Role="material" EntitySet="material" />
+            <End Role="cooling" EntitySet="cooling" />
+          </AssociationSet>
+          <AssociationSet Name="FK_hard_drive_type_memory" Association="Self.FK_hard_drive_type_memory">
+            <End Role="type_memory" EntitySet="type_memory" />
+            <End Role="hard_drive" EntitySet="hard_drive" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ram_type_ram" Association="Self.FK_ram_type_ram">
+            <End Role="type_ram" EntitySet="type_ram" />
+            <End Role="ram" EntitySet="ram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_role" Association="Self.FK_user_role">
+            <End Role="role" EntitySet="role" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ssd_type_memory" Association="Self.FK_ssd_type_memory">
+            <End Role="type_memory" EntitySet="type_memory" />
+            <End Role="ssd" EntitySet="ssd" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(configuratorPCModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(configuratorPCModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище configuratorPCModelContainer" CdmEntityContainer="configuratorPCEntities">
+          <EntitySetMapping Name="add_ssd">
+            <EntityTypeMapping TypeName="configuratorPCModel.add_ssd">
+              <MappingFragment StoreEntitySet="add_ssd">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="volume" ColumnName="volume" />
+                <ScalarProperty Name="write_speed" ColumnName="write_speed" />
+                <ScalarProperty Name="read_speed" ColumnName="read_speed" />
+                <ScalarProperty Name="type_chip" ColumnName="type_chip" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="type_memory_id" ColumnName="type_memory_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="body">
+            <EntityTypeMapping TypeName="configuratorPCModel.body">
+              <MappingFragment StoreEntitySet="body">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ffactor" ColumnName="ffactor" />
+                <ScalarProperty Name="type_body_id" ColumnName="type_body_id" />
+                <ScalarProperty Name="colors_id" ColumnName="colors_id" />
+                <ScalarProperty Name="max_videocard" ColumnName="max_videocard" />
+                <ScalarProperty Name="dimensions" ColumnName="dimensions" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="max_cool" ColumnName="max_cool" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="certification">
+            <EntityTypeMapping TypeName="configuratorPCModel.certification">
+              <MappingFragment StoreEntitySet="certification">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="colors">
+            <EntityTypeMapping TypeName="configuratorPCModel.colors">
+              <MappingFragment StoreEntitySet="colors">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="computer">
+            <EntityTypeMapping TypeName="configuratorPCModel.computer">
+              <MappingFragment StoreEntitySet="computer">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="processor_id" ColumnName="processor_id" />
+                <ScalarProperty Name="motherboard_id" ColumnName="motherboard_id" />
+                <ScalarProperty Name="body_id" ColumnName="body_id" />
+                <ScalarProperty Name="ram_id" ColumnName="ram_id" />
+                <ScalarProperty Name="videocard_id" ColumnName="videocard_id" />
+                <ScalarProperty Name="ssd_id" ColumnName="ssd_id" />
+                <ScalarProperty Name="cooling_id" ColumnName="cooling_id" />
+                <ScalarProperty Name="power_unit_id" ColumnName="power_unit_id" />
+                <ScalarProperty Name="hard_drive_id" ColumnName="hard_drive_id" />
+                <ScalarProperty Name="add_ssd_id" ColumnName="add_ssd_id" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cool_system">
+            <EntityTypeMapping TypeName="configuratorPCModel.cool_system">
+              <MappingFragment StoreEntitySet="cool_system">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cooling">
+            <EntityTypeMapping TypeName="configuratorPCModel.cooling">
+              <MappingFragment StoreEntitySet="cooling">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="max_speed" ColumnName="max_speed" />
+                <ScalarProperty Name="height_cool" ColumnName="height_cool" />
+                <ScalarProperty Name="material_id" ColumnName="material_id" />
+                <ScalarProperty Name="power" ColumnName="power" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hard_drive">
+            <EntityTypeMapping TypeName="configuratorPCModel.hard_drive">
+              <MappingFragment StoreEntitySet="hard_drive">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="volume" ColumnName="volume" />
+                <ScalarProperty Name="read_speed" ColumnName="read_speed" />
+                <ScalarProperty Name="cache" ColumnName="cache" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="type_memory_id" ColumnName="type_memory_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="material">
+            <EntityTypeMapping TypeName="configuratorPCModel.material">
+              <MappingFragment StoreEntitySet="material">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="motherboard">
+            <EntityTypeMapping TypeName="configuratorPCModel.motherboard">
+              <MappingFragment StoreEntitySet="motherboard">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="socket" ColumnName="socket" />
+                <ScalarProperty Name="chipset" ColumnName="chipset" />
+                <ScalarProperty Name="max_freq" ColumnName="max_freq" />
+                <ScalarProperty Name="channels" ColumnName="channels" />
+                <ScalarProperty Name="network" ColumnName="network" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="power_unit">
+            <EntityTypeMapping TypeName="configuratorPCModel.power_unit">
+              <MappingFragment StoreEntitySet="power_unit">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="power" ColumnName="power" />
+                <ScalarProperty Name="certification_id" ColumnName="certification_id" />
+                <ScalarProperty Name="cool_system_id" ColumnName="cool_system_id" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="processor">
+            <EntityTypeMapping TypeName="configuratorPCModel.processor">
+              <MappingFragment StoreEntitySet="processor">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="socket" ColumnName="socket" />
+                <ScalarProperty Name="core" ColumnName="core" />
+                <ScalarProperty Name="streams" ColumnName="streams" />
+                <ScalarProperty Name="cache" ColumnName="cache" />
+                <ScalarProperty Name="freq" ColumnName="freq" />
+                <ScalarProperty Name="heat" ColumnName="heat" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ram">
+            <EntityTypeMapping TypeName="configuratorPCModel.ram">
+              <MappingFragment StoreEntitySet="ram">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="socket" ColumnName="socket" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="volume" ColumnName="volume" />
+                <ScalarProperty Name="freq" ColumnName="freq" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="role">
+            <EntityTypeMapping TypeName="configuratorPCModel.role">
+              <MappingFragment StoreEntitySet="role">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ssd">
+            <EntityTypeMapping TypeName="configuratorPCModel.ssd">
+              <MappingFragment StoreEntitySet="ssd">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="volume" ColumnName="volume" />
+                <ScalarProperty Name="write_speed" ColumnName="write_speed" />
+                <ScalarProperty Name="read_speed" ColumnName="read_speed" />
+                <ScalarProperty Name="type_chip" ColumnName="type_chip" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="type_memory_id" ColumnName="type_memory_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="configuratorPCModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="type_body">
+            <EntityTypeMapping TypeName="configuratorPCModel.type_body">
+              <MappingFragment StoreEntitySet="type_body">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="type_memory">
+            <EntityTypeMapping TypeName="configuratorPCModel.type_memory">
+              <MappingFragment StoreEntitySet="type_memory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="type_ram">
+            <EntityTypeMapping TypeName="configuratorPCModel.type_ram">
+              <MappingFragment StoreEntitySet="type_ram">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user">
+            <EntityTypeMapping TypeName="configuratorPCModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="videocard">
+            <EntityTypeMapping TypeName="configuratorPCModel.videocard">
+              <MappingFragment StoreEntitySet="videocard">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="graph_proc" ColumnName="graph_proc" />
+                <ScalarProperty Name="memory" ColumnName="memory" />
+                <ScalarProperty Name="permisson" ColumnName="permisson" />
+                <ScalarProperty Name="freq" ColumnName="freq" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище configuratorPCModel.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище configuratorPCModel.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище configuratorPCModel.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище configuratorPCModel.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="configuratorPCModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище configuratorPCModel.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="configuratorPCModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище configuratorPCModel.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище configuratorPCModel.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

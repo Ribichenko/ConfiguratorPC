@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="808bdf1a41844dc79e6ae74a0fca6cca" Name="Diagram1" ZoomLevel="60">
+        <EntityTypeShape EntityType="configuratorPCModel.add_ssd" Width="1.5" PointX="11.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.body" Width="1.5" PointX="11.125" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.certification" Width="1.5" PointX="19.625" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.colors" Width="1.5" PointX="8.625" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.computer" Width="1.5" PointX="13.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.cool_system" Width="1.5" PointX="19.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.cooling" Width="1.5" PointX="11.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.hard_drive" Width="1.5" PointX="9.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.material" Width="1.5" PointX="9.625" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.motherboard" Width="1.5" PointX="12" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.power_unit" Width="1.5" PointX="17.375" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.processor" Width="1.5" PointX="17.875" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.ram" Width="1.5" PointX="14" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.role" Width="1.5" PointX="17.125" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.ssd" Width="1.5" PointX="7.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.sysdiagrams" Width="1.5" PointX="1.875" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.type_body" Width="1.5" PointX="9.125" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.type_memory" Width="1.5" PointX="7.375" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.type_ram" Width="1.5" PointX="14.125" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.user" Width="1.5" PointX="15.375" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="configuratorPCModel.videocard" Width="1.5" PointX="16" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="configuratorPCModel.FK_add_ssd_type_memory" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_computer_add_ssd" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_body_colors" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_body_type_body" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_computer_body" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_power_unit_certification" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_computer_cooling" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_computer_hard_drive" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_computer_motherboard" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_computer_power_unit" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_computer_processor" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_computer_ram" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_computer_ssd" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_computer_user" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_computer_videocard" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_power_unit_cool_system" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_cooling_material" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_hard_drive_type_memory" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_ram_type_ram" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_user_role" ManuallyRouted="false" />
+        <AssociationConnector Association="configuratorPCModel.FK_ssd_type_memory" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
