@@ -89,13 +89,16 @@
         <Style x:Key="MenuBtn" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter x:Name="bck" Property="Background" Value="#ffff00"/>
+            <Setter Property="Height" Value="75"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Name="border" 
-                            BorderThickness="0"
-                            Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            BorderThickness="1"
+                                BorderBrush="Gray"
+                            Background="Transparent"
+                            Padding="10 10 10 10">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
                         </Border>
                         <ControlTemplate.Triggers>
 
@@ -119,6 +122,8 @@
         <Style x:Key="AddBtn" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="#ffff00"/>
+            <Setter Property="Width" Value="110" />
+            <Setter Property="Height" Value="40" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">

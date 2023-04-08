@@ -82,22 +82,39 @@
             <!--<Viewbox Grid.Row="1" Grid.Column="1" VerticalAlignment="Top">-->
             <StackPanel Grid.Row="1" Width="auto" Grid.Column="1" VerticalAlignment="Top" Orientation="Vertical" Margin="0 0 10 0" Background="Transparent" ScrollViewer.CanContentScroll="True">
                 <TextBlock FontSize="7" Grid.Row="1" HorizontalAlignment="Left" Grid.Column="1">
-                            <Label Foreground="#CCCCCC" FontSize="10">КОМПЛЕКТАЦИЯ</Label>
+                            <Label Foreground="#CCCCCC" FontSize="20">КОМПЛЕКТАЦИЯ</Label>
                 </TextBlock>
 
-                <Button Style="{StaticResource MenuBtn}" x:Name="procBtn" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="70" FontSize="8" Click="procBtn_Click">ПРОЦЕССОР</Button>
-                <Button Style="{StaticResource MenuBtn}" x:Name="button2" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="70" FontSize="8"></Button>
-                <Button Style="{StaticResource MenuBtn}" x:Name="button3" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="70" FontSize="8"></Button>
-                <Button Style="{StaticResource MenuBtn}" x:Name="button4" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="70" FontSize="8"></Button>
-                <Button Style="{StaticResource MenuBtn}" x:Name="button5" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="70" FontSize="8"></Button>
-                <Button Style="{StaticResource MenuBtn}" x:Name="button6" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="70" FontSize="8"></Button>
-                <Button Style="{StaticResource MenuBtn}" x:Name="button7" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="70" FontSize="8"></Button>
-                <Button Style="{StaticResource MenuBtn}" x:Name="button8" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="70" FontSize="8"></Button>
-                <Button Style="{StaticResource MenuBtn}" x:Name="button9" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="70" FontSize="8"></Button>
-                <Button Style="{StaticResource MenuBtn}" x:Name="button10" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" Height="70" FontSize="8"></Button>
+                <Button Style="{StaticResource MenuBtn}" x:Name="procBtn" Background="#706500" Grid.Row="1" Grid.Column="1" Click="procBtn_Click">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Margin="0 0 0 5" Foreground="White">
+                            ПРОЦЕССОР
+                        </TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/img/i-processor.png" Width="25" Height="25" Margin="0 0 15 0"></Image>
+                            <TextBlock x:Name="processorTB" Foreground="Gray">
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource MenuBtn}" x:Name="button2" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="8"></Button>
+                <Button Style="{StaticResource MenuBtn}" x:Name="button3" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="8"></Button>
+                <Button Style="{StaticResource MenuBtn}" x:Name="button4" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="8"></Button>
+                <Button Style="{StaticResource MenuBtn}" x:Name="button5" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="8"></Button>
+                <Button Style="{StaticResource MenuBtn}" x:Name="button6" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="8"></Button>
+                <Button Style="{StaticResource MenuBtn}" x:Name="button7" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="8"></Button>
+                <Button Style="{StaticResource MenuBtn}" x:Name="button8" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="8"></Button>
+                <Button Style="{StaticResource MenuBtn}" x:Name="button9" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="8"></Button>
+                <Button Style="{StaticResource MenuBtn}" x:Name="button10" Background="#706500" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="8"></Button>
             </StackPanel>
-            <Frame x:Name="MainFrame" Margin="10 0 0 0" Grid.Column="2" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>                
+            <Frame x:Name="MainFrame" Margin="10 0 10 0" Grid.Column="2" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
             <!--</Viewbox>-->
+            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="3" Margin="10 0 0 0" Background="#424549">
+                <DockPanel Margin="10 30 10 10">
+                    <TextBlock HorizontalAlignment="Left">СТОИМОСТЬ</TextBlock>
+                    <TextBlock x:Name="sum" TextAlignment="Right">0 Р.</TextBlock>
+                </DockPanel>
+            </StackPanel>
         </Grid>
     </Border>
 </Window>

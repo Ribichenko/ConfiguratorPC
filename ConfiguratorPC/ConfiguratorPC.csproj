@@ -238,6 +238,7 @@
       <DependentUpon>ModelBase.edmx</DependentUpon>
       <LastGenOutput>ModelBase.cs</LastGenOutput>
     </Content>
+    <Resource Include="img\i-processor.png" />
     <Resource Include="img\processor-intel-core-i3-10100f.png" />
   </ItemGroup>
   <ItemGroup>

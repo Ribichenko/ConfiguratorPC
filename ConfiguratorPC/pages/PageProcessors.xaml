@@ -12,8 +12,8 @@
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Name="LV" Background="#424549" BorderThickness="0" IsVisibleChanged="LV_IsVisibleChanged">
-            <ListView.ItemTemplate>
+        <ListView Grid.Row="1" Name="LV" Background="#424549" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" IsVisibleChanged="LV_IsVisibleChanged">
+            <ListView.ItemTemplate >
                 <DataTemplate>
                 <Grid Margin="20" HorizontalAlignment="Stretch" Height="100" Width="auto" ShowGridLines="True">
                     <Grid.RowDefinitions>
@@ -22,18 +22,22 @@
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75"></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="75"></ColumnDefinition>
+                            <ColumnDefinition Width="110"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
-                            <Image Source="{Binding image}"></Image>
+                        <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.RowSpan="3">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.RowSpan="3">
+                            <Image Source="/img/logo.png" Width="75" Height="75"></Image>
                         </StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1">
-                            <TextBlock Foreground="White" TextAlignment="Left" TextWrapping="Wrap" Text="Процессор "></TextBlock>
-                            <TextBlock Margin="0 0 0 0" Foreground="White" TextAlignment="Left" TextWrapping="WrapWithOverflow" Text="{Binding name}"></TextBlock>
-                    </StackPanel>
+                        </Viewbox>
+                        <Viewbox HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1">
+                            <TextBlock Foreground="White" TextAlignment="Left" Padding="10 0 0 0" TextWrapping="Wrap" Text="Процессор "></TextBlock>
+                            <TextBlock Margin="0 0 0 0" Foreground="White" TextAlignment="Left" TextWrapping="WrapWithOverflow" Text="{Binding name}" Padding="0 0 10 10"></TextBlock>
+                        </StackPanel>
+                        </Viewbox>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1">
                             <TextBlock Foreground="#CCCCCC" FontSize="14" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding core}"></TextBlock>
                             <TextBlock Foreground="#CCCCCC" FontSize="14" TextAlignment="Left" TextWrapping="Wrap" Text=" , "></TextBlock>
@@ -51,10 +55,12 @@
                                 <Hyperlink Foreground="#ffff00" FontSize="14" Click="Hyperlink_Click" TextDecorations="None">Подробнее</Hyperlink>
                             </TextBlock>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2">
-                            <TextBlock Foreground="White" Text="{Binding price}"></TextBlock>
+                        <Viewbox HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 0 0" Grid.Column="2" Grid.RowSpan="2">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 0 0" Grid.Column="2" Grid.RowSpan="2">
+                            <TextBlock x:Name="priceTB" Foreground="White" Padding="10 10 10 10" Text="{Binding price}"></TextBlock>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3">
+                        </Viewbox>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="3" Grid.RowSpan="2">
                             <Button Style="{StaticResource AddBtn}" x:Name="add_btn" Content="Добавить"></Button>
                         </StackPanel>
                     </Grid>

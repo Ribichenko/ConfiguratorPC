@@ -40,6 +40,8 @@ namespace ConfiguratorPC
             var cooling = configuratorPCEntities.GetContext().cooling.Count();
             var power_unit = configuratorPCEntities.GetContext().power_unit.Count();
 
+
+            processorTB.Text = "вариантов " + processor;
             //button1.Content = "ПРОЦЕССОР\n\nвариантов " + processor;
             //button2.Content = "МАТЕРИНСКАЯ ПЛАТА\n\nвариантов "+ mother;
             //button3.Content = "КОРПУС\n\nвариантов " + body;
