@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Forms;
 
 namespace ConfiguratorPC.pages
 {
@@ -25,7 +26,9 @@ namespace ConfiguratorPC.pages
         {
             InitializeComponent();
             var currentProcessor = configuratorPCEntities.GetContext().processor.ToList();
+            
             LV.ItemsSource = currentProcessor;
+            
         }
 
         private void LV_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

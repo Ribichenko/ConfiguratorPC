@@ -7,6 +7,12 @@
 
         <Color x:Key="WindowColor">#FFE8EDF9</Color>
 
+        <Style x:Key="ListViewStyle" TargetType="{x:Type ListView}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+
+        </Style>
+        
         <Style TargetType="TextBox">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter Property="Foreground" Value="#CCCCCC"/>
@@ -19,7 +25,7 @@
                     <ControlTemplate TargetType="TextBox">
                         <Border x:Name="bg"
                                 Background="{TemplateBinding Background}"
-                            CornerRadius="5"
+                            CornerRadius="0"
                             BorderThickness="1"
                                 BorderBrush="{TemplateBinding BorderBrush}">
                             <!--Background="#424549"-->
@@ -52,11 +58,12 @@
         <Style x:Key="StyleBtn" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter x:Name="bck" Property="Background" Value="#ffff00"/>
+            <Setter Property="Foreground" Value="#424549" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Name="border" 
-                            CornerRadius="5"
+                            CornerRadius="0"
                             BorderThickness="0"
                             Background="{TemplateBinding Background}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -136,7 +143,7 @@
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="#ffff00"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Foreground" Value="#424549"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
